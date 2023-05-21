@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            String token = TOKEN_KEY;
-            String gameBaseUrl = BASE_GAME_URL_KEY;
+            String token = System.getenv(TOKEN_KEY);
+            String gameBaseUrl = System.getenv(BASE_GAME_URL_KEY);
             GameInviteUrlBuilder gameInviteUrlBuilder = new SimpleGameInviteUrlBuilder(gameBaseUrl);
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
             botsApi.registerBot(new GameBot(token, gameInviteUrlBuilder));
