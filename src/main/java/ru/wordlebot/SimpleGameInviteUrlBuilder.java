@@ -17,7 +17,7 @@ public class SimpleGameInviteUrlBuilder implements GameInviteUrlBuilder {
     public String build(@NotNull CallbackQuery callbackQuery) {
         return String.format("%s?chat_id=%s&user_id=%d",
                 gameBaseUrl,
-                callbackQuery.getChatInstance(),
+                callbackQuery.getInlineMessageId(),
                 callbackQuery.getFrom().getId());
     }
 }
